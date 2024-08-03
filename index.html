@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>message bomber</title>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+form{
+    margin: 50px;
+    text-align: center;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+button{
+    margin-top: 40px;
+    height: 30px;
+    width: 100px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; text-decoration: underline;">Whatsapp Text Bomber</h1>
+    <form>
+        <p>
+            <label>Enter repetition time : </label>
+            <input type="number" id="count"/>
+        </p>
+        <!-- <br/> -->
+        <p>
+            <label>Enter message : </label>
+            <input type="text" id="message"/>
+        </p>
+        
+        <button>Print</button>
+        
+        <div id="result"></div>
+    </form>
+
+</body>
+<script>
+    const form = document.querySelector("form");
+const body = document.querySelector("body");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    
+    const  count= parseInt(document.querySelector("#count").value);
+    const message = (document.querySelector("#message").value);
+    const result = document.querySelector("#result");
+
+    console.log(count)
+
+    for(var i=1; i<=count; i++){
+        let div = document.createElement("div");
+        div.textContent =   `${message}`;
+        body.appendChild(div);  
+        console.log(`${message}`)
+    }
+
+});
+</script>
+</html>
